@@ -1,9 +1,4 @@
 # ASP.NET Core
-- task: KubernetesManifest@0
-  inputs:
-    action: 'deploy'
-    kubernetesServiceConnection: 'vivek-aks-service'
-    manifests: 'my-manifest'
 # Build and test ASP.NET Core projects targeting .NET Core.
 # Add steps that run tests, create a NuGet package, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
@@ -27,3 +22,8 @@ steps:
       # Write your commands here
       
       echo 'Hello world'
+- task: KubernetesManifest@0
+  inputs:
+    action: 'deploy'
+    kubernetesServiceConnection: 'vivek-aks-service'
+    manifests: 'my-manifest'
